@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="article"
+            type="com.example.news.api.articlesModel.Article" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/pattern_bg"
+        tools:context=".ui.home.articleDetails.ArticleDetailsFragment">
+
+
+        <ImageView
+            android:id="@+id/article_img"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:placeholder="@{@drawable/loading_spinner}"
+            app:url="@{article.urlToImage}"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+
+        <TextView
+            android:id="@+id/article_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+
+            android:fontFamily="@font/poppins_light"
+            android:text="@{article.title}"
+            android:textColor="@color/black"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/article_img"
+            tools:text="Title" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/article_title">
+
+            <TextView
+                android:id="@+id/article_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ellipsize="end"
+                android:fontFamily="@font/poppins_light"
+                android:lines="5"
+                android:maxLines="10"
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="20dp"
+                android:text="@{article.content}"
+                android:textSize="16sp"
+                tools:text="@tools:sample/lorem/random" />
+        </androidx.core.widget.NestedScrollView>
+
+        <TextView
+            android:id="@+id/article_readMore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_thin"
+            android:gravity="end"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="20dp"
+            android:text="@string/view_full_article"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:drawableEndCompat="@drawable/ic_arrow_right"
+            app:layout_constraintTop_toBottomOf="@id/nested_scroll_view" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

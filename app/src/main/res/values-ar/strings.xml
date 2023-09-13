@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">الأخبار</string>
+    <string name="action_settings">الإعدادات</string>
+    <string name="menu_categories">المواضيع</string>
+    <string name="menu_settings">الإعدادات</string>
+    <string name="pick_category">مواضيع الأخبار :\n اختر أحدها ليصلك كل جديد </string>
+    <string name="language">اللغة</string>
+    <string name="view_full_article">لقراءة المزيد</string>
+    <string name="articles_not_found">لا يوجد أخبار لدى هذا المصدر حاليا</string>
+    <string name="sports">الرياضة</string>
+    <string name="technology">التقنية</string>
+    <string name="health">الصحة</string>
+    <string name="business">إدارة الأعمال</string>
+    <string name="entertainment">الترفيه</string>
+    <string name="science">العلوم</string>
+    <string name="search_not_found">نعتذر لم نجد أي أخبار بكلمات البحث  </string>
+
+</resources>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="article"
+            type="com.example.news.api.articlesModel.Article" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:paddingBottom="20dp">
+
+
+                <ImageView
+                    android:id="@+id/article_img"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:placeholder="@{@drawable/loading_spinner}"
+                    app:url="@{article.urlToImage}"
+                    tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+                <TextView
+                    android:id="@+id/article_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/poppins_light"
+                    android:textColor="@color/black"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@id/article_img"
+                    tools:text="@{article.title}" />
+
+                <TextView
+                    android:id="@+id/article_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/poppins_light"
+                    android:lines="2"
+                    android:maxLines="2"
+                    android:textSize="18sp"
+                    app:layout_constraintTop_toBottomOf="@id/article_title"
+                    tools:text="@{article.description}" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
